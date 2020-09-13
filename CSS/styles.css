@@ -14,11 +14,15 @@ body {
 .anunciocasa{
     max-width: 100%;
 }
+.imagendestacada{
+    max-width: 100%;
+}
 img{
     max-width: 38rem;
    
 }
 .contenedor{
+    width: 95%;
     max-width: 1200px ;
     margin:  0 auto ;
 }
@@ -62,13 +66,25 @@ h4{
    padding: 1rem 3rem;
    margin-top: 3rem;
    text-align: center;
+   border: none;
+   display: block;
+   flex: 0 0 100%;
    
+}
+@media (min-width: 768px) {
+    .boton {
+        display: inline-block;
+        flex: 0 0 auto;
+    }
+}
+.boton:hover{
+    cursor: pointer;
 }
 .boton-amarillo{
  background-color: #e08709;
 }
 .boton-verde{
- background-color: rgb(27, 126, 27);
+ background-color: #1b7e1b;
 }
 /* HEADER */
 .site-header {
@@ -88,6 +104,12 @@ h4{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .contenido-header{
+        text-align: left;
+    }
 }
 .contenido-header h1{
     color: white;
@@ -96,38 +118,83 @@ h4{
     line-height: 2rem;
 }
 .barra {
-    display: flex ;
-    justify-content: space-between;
-    padding-top: 30px;
-    padding-top: center;
+    padding-top: 3rem;
+}
+
+@media (min-width: 768px){
+    .barra {
+        display: flex ;
+        justify-content: space-between;
+        padding-top: 30px;
+        padding-top: center;
+    }
+
 }
 /** navegacion**/
 .navegacion a {
     color: white;
     text-decoration: none ;
-    font-size: 1.8rem;
-    margin-right: 20px
+    font-size: 2.2rem;
+    
+    display: block;
+}
+@media (min-width: 768px) {
+    .navegacion a {
+        display: inline-block;
+        font-size: 1.8rem;
+        margin-right: 20px;
+    }
+    .navegacion a:last-of-type {
+        margin: 0;
+    }
 }
 .navegacion a:hover{
     color:#71B100
 
 }
-.navegacion a:last-of-type {
-    margin: 0;
+/**mobile menu**/
+.mobile-menu img {
+    width: 5rem;
 }
+@media (min-width: 768px) {
+    .mobile-menu {
+        display: none;
+    }
+}
+.navegacion {
+    display: none;
+}
+.navegacion:target {
+    display: block;
+}
+@media(min-width: 768px) {
+    .navegacion{
+    display: block;
+}
+}
+
 /**iconos nosotros**/
+@media (min-width: 768px) {
+    .iconos-nosotros {
+        display: flex;
+        justify-content: space-between ;
+    }
+}
 .encabezado-nosotros{
     font-weight: 700;
     text-align: center;
      
 }
-.iconos-nosotros {
-    display: flex;
-    justify-content: space-between ;
-}
+
 .icono {
-    flex-basis: calc(33.3% - 1rem );
+    
     text-align: center;
+}
+@media (min-width: 768px) {
+    .icono {
+        flex-basis: calc(33.3% - 1rem );
+
+    }
 }
 .icono h3{
     text-transform: uppercase;
@@ -136,11 +203,14 @@ h4{
     text-align: center;
 }
 /**anuncios**/
-.contenedor-anuncios{
-    display: flex;
-    justify-content: space-between ;
-    flex-wrap: wrap;
+@media (min-width: 768px) {
+    .contenedor-anuncios{
+        display: flex;
+        justify-content: space-between ;
+        flex-wrap: wrap;
+    }
 }
+
 .anuncio{
     flex-grow: 0;
     flex-shrink: 0;
@@ -148,6 +218,11 @@ h4{
     border: 1px solid gray;
     background: #f5f5f5;
     margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .anuncio {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
 }
 .contenido-anuncio{
     padding: 2rem;
@@ -187,7 +262,7 @@ h4{
     align-items: center;
 }
 .contenido-contacto{
-    flex: 1;
+    flex: 0 0 95%;
     color: white
 }
 .contenido-contacto p{
@@ -195,31 +270,41 @@ h4{
 }
 
 /** SECCION INFERIOR **/
-.seccion-inferior{
-    display: flex;
-    justify-content: space-between;
+@media (min-width: 768px) {
+    .seccion-inferior{
+        display: flex;
+        justify-content: space-between;
+    }
+    .seccion-inferior .blog{
+        flex-basis: 60%;
+    }
+    .seccion-inferior .testimoniales{
+        flex-basis: calc(40% - 2rem);
+    }
 }
-.seccion-inferior .blog{
-    flex-basis: 60%;
-}
-.seccion-inferior .testimoniales{
-    flex-basis: calc(40% - 2rem);
-}
-
 .entrada-blog{
-    display: flex;
-    justify-content: space-between;
-     margin-bottom: 2rem ;
+   
+     margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .entrada-blog {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 .entrada-blog :last-of-type {
     margin-bottom: 0;
 }
-.entrada-blog .imagen {
-    flex-basis: 40%;
+@media (min-width: 768px) {
+    .entrada-blog .imagen {
+        flex-basis: 40%;
+    }
+    .entrada-blog .texto-entrada {
+        flex-basis: calc(60% - 3rem);
+    }  
+    
 }
-.entrada-blog .texto-entrada {
-    flex-basis: calc(60% - 3rem);
-}
+
 .texto-entrada a{
     color:black
 }
@@ -269,20 +354,38 @@ h4{
 }
 .contenedor-footer {
     padding: 3rem 0;
+    
+}
+@media (min-width: 768px) {
+   .contenedor-footer {
     display: flex;
     justify-content: space-between;
+}
+}
+.site-footer nav {
+    display: none;
+}
+@media (min-width: 768px) {
+    .site-footer nav {
+        display: block;
+    }
 }
 .copyright {
     margin: 0;
 }
+
+
 /**INTERNAS**/
 /**nosotros**/
-.contenido-nosotros {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column: 2rem;
-
+@media (min-width: 768px) {
+    .contenido-nosotros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column: 2rem;
+    
+    }
 }
+
 .texto-nosotros blockquote {
     font-weight: 900;
     font-size: 2rem;
@@ -296,3 +399,62 @@ h4{
    justify-content: space-between; 
    align-items: center;
 }
+/**CONTACTO**/
+form p{
+    font-size: 1.3rem;
+    color: #4f4f4f;
+}
+legend{
+    font-size: 2.4rem;
+    color: #4f4f4f
+}
+label{
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+
+}
+form p{
+    font-size: 1.4rem;
+    color: #4f4f4f;
+    margin: 0;
+}
+legend{
+    font-size: 2rem;
+    color: #4f4f4f
+}
+label{
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+}
+input:not([type="submit"]),
+textarea,
+select {
+    padding: .5rem;
+     display: block;
+     width: 100%;
+     background-color: #e1e1e1;
+     margin-bottom: 2rem;
+     border: none;
+}
+input[type="radio"]{
+    width: auto;
+    margin: 0;
+}
+select{
+    -webkit-appearance: none;
+    appearance: none;
+}
+textarea{
+    height: 200px;
+}
+.forma-contacto {
+    max-width: 30rem;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+
+
